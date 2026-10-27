@@ -1,0 +1,37 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="MemoryMadness"
+run/main_scene="uid://d4jyqyarq3h8w"
+config/features=PackedStringArray("4.7", "Mobile")
+config/icon="uid://cm3x4oiekoxmy"
+
+[autoload]
+
+SignalHub="*uid://cv5174re1ama0"
+ImageManager="*uid://6hqu0s6e2cvl"
+ScoreManager="*uid://byhf1kv58ekou"
+
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=768
+window/stretch/mode="canvas_items"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"

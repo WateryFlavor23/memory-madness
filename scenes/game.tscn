@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://d16kvrcaq0dmn"]
+
+[ext_resource type="Texture2D" uid="uid://dk16kfwtqa4yi" path="res://assets/ui/blue_button00.png" id="1_lnu2h"]
+[ext_resource type="Script" uid="uid://5gso8i0p8sep" path="res://scripts/game.gd" id="1_p57ef"]
+[ext_resource type="Texture2D" uid="uid://ceu42wmi08uyy" path="res://assets/ui/green_button00.png" id="2_lbhrr"]
+[ext_resource type="LabelSettings" uid="uid://cy08hhwp1evl3" path="res://rsc/label_white_18.tres" id="2_p57ef"]
+[ext_resource type="Texture2D" uid="uid://cfdyqoybqtnnr" path="res://assets/ui/grey_button00.png" id="3_iywne"]
+[ext_resource type="PackedScene" uid="uid://ci8jk6ictfo1" path="res://scenes/game_over_ui.tscn" id="6_p57ef"]
+[ext_resource type="AudioStream" uid="uid://c7f61jd06ha5c" path="res://assets/sounds/sfx_sounds_fanfare3.wav" id="7_u5sy4"]
+
+[node name="Game" type="Control" unique_id=1090161509]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p57ef")
+
+[node name="Schematic" type="HBoxContainer" parent="." unique_id=798671608]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Filler1" type="Control" parent="Schematic" unique_id=441664524]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Boxes" type="GridContainer" parent="Schematic" unique_id=879774269]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 4
+
+[node name="Filler2" type="Control" parent="Schematic" unique_id=754359128]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Status" type="VBoxContainer" parent="Schematic" unique_id=296074025]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Moves" type="HBoxContainer" parent="Schematic/Status" unique_id=520016060]
+layout_mode = 2
+
+[node name="MoveLabel" type="Label" parent="Schematic/Status/Moves" unique_id=588461422]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MOVES"
+label_settings = ExtResource("2_p57ef")
+vertical_alignment = 1
+
+[node name="MovesNumberLabel" type="Label" parent="Schematic/Status/Moves" unique_id=401638715]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_p57ef")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Pairs" type="HBoxContainer" parent="Schematic/Status" unique_id=2080478069]
+layout_mode = 2
+
+[node name="PairsLabel" type="Label" parent="Schematic/Status/Pairs" unique_id=1405907262]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "PAIRS"
+label_settings = ExtResource("2_p57ef")
+vertical_alignment = 1
+
+[node name="PairsNumberLabel" type="Label" parent="Schematic/Status/Pairs" unique_id=2014477545]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0/6"
+label_settings = ExtResource("2_p57ef")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="FixedFiller" type="Control" parent="Schematic/Status" unique_id=973360122]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="ExitButton" type="TextureButton" parent="Schematic/Status" unique_id=667103590]
+layout_mode = 2
+texture_normal = ExtResource("1_lnu2h")
+texture_pressed = ExtResource("3_iywne")
+texture_hover = ExtResource("2_lbhrr")
+
+[node name="Label" type="Label" parent="Schematic/Status/ExitButton" unique_id=620245928]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+label_settings = ExtResource("2_p57ef")
+
+[node name="Filler3" type="Control" parent="Schematic" unique_id=407635902]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GameOverContainer" type="MarginContainer" parent="." unique_id=541388124]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 96
+
+[node name="GameOverUi" parent="GameOverContainer" unique_id=571885075 instance=ExtResource("6_p57ef")]
+layout_mode = 2
+
+[node name="GameOverMusic" type="AudioStreamPlayer" parent="." unique_id=1551774022]
+unique_name_in_owner = true
+stream = ExtResource("7_u5sy4")
+
+[connection signal="pressed" from="Schematic/Status/ExitButton" to="." method="_on_exit_button_pressed"]

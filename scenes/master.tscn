@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://d4jyqyarq3h8w"]
+
+[ext_resource type="Texture2D" uid="uid://dhg5hikctmh0" path="res://assets/images/backgroundEmpty.png" id="1_aynem"]
+[ext_resource type="Script" uid="uid://dnpqm55fyemxv" path="res://scripts/master.gd" id="1_h2qy3"]
+[ext_resource type="PackedScene" uid="uid://cacmwrpp4t4ed" path="res://scenes/main.tscn" id="2_jooxx"]
+[ext_resource type="PackedScene" uid="uid://d16kvrcaq0dmn" path="res://scenes/game.tscn" id="3_rnotf"]
+[ext_resource type="PackedScene" uid="uid://b6u82oa8v6811" path="res://scenes/sound_controller.tscn" id="5_q3f5g"]
+
+[node name="Master" type="Control" unique_id=117069984]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h2qy3")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1599953117]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_aynem")
+expand_mode = 1
+
+[node name="Main" parent="." unique_id=943712725 instance=ExtResource("2_jooxx")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="Game" parent="." unique_id=1090161509 instance=ExtResource("3_rnotf")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="SoundController" parent="." unique_id=1300659373 instance=ExtResource("5_q3f5g")]

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://b6u82oa8v6811"]
+
+[ext_resource type="Script" uid="uid://df70i1mnfnhyi" path="res://scripts/sound_controller.gd" id="1_svxng"]
+[ext_resource type="AudioStream" uid="uid://bayodqx3jpdhp" path="res://assets/sounds/bgm_action_3.mp3" id="2_32gpw"]
+[ext_resource type="AudioStream" uid="uid://b0c31edxda2mc" path="res://assets/sounds/bgm_action_4.mp3" id="3_im1f3"]
+[ext_resource type="AudioStream" uid="uid://cuufe6urwkkkb" path="res://assets/sounds/sfx_sounds_impact7.wav" id="4_32gpw"]
+[ext_resource type="AudioStream" uid="uid://cqtrx4t27hvvn" path="res://assets/sounds/sfx_sounds_powerup12.wav" id="5_im1f3"]
+
+[node name="SoundController" type="Node" unique_id=1300659373]
+script = ExtResource("1_svxng")
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="." unique_id=184580434]
+unique_name_in_owner = true
+stream = ExtResource("2_32gpw")
+volume_db = -15.0
+parameters/looping = true
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="." unique_id=569769403]
+unique_name_in_owner = true
+stream = ExtResource("3_im1f3")
+volume_db = -15.0
+parameters/looping = true
+
+[node name="Impact1" type="AudioStreamPlayer" parent="." unique_id=2017260652]
+unique_name_in_owner = true
+stream = ExtResource("4_32gpw")
+volume_db = -10.0
+
+[node name="Impact2" type="AudioStreamPlayer" parent="." unique_id=633507232]
+unique_name_in_owner = true
+stream = ExtResource("4_32gpw")
+volume_db = -10.0
+
+[node name="Pair" type="AudioStreamPlayer" parent="." unique_id=803080802]
+unique_name_in_owner = true
+stream = ExtResource("5_im1f3")
+volume_db = -12.0

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ci8jk6ictfo1"]
+
+[ext_resource type="LabelSettings" uid="uid://l6vxbsm2mq1d" path="res://rsc/title_label.tres" id="1_y6ord"]
+[ext_resource type="FontFile" uid="uid://c2gt4q4ev7wj1" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_lk38d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbgkd"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 0.45490196)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_cotc0"]
+font = ExtResource("2_lk38d")
+font_size = 38
+font_color = Color(1, 0.6706081, 0.89816695, 1)
+outline_size = 8
+outline_color = Color(0.61229867, 0.5411529, 0.21433726, 1)
+
+[node name="GameOverUi" type="PanelContainer" unique_id=571885075]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nbgkd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=416409212]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1760378317]
+layout_mode = 2
+text = "YOU WIN"
+label_settings = ExtResource("1_y6ord")
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=1446122264]
+layout_mode = 2
+text = "asdasd"
+label_settings = SubResource("LabelSettings_cotc0")
+horizontal_alignment = 1
+vertical_alignment = 1

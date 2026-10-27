@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://cacmwrpp4t4ed"]
+
+[ext_resource type="LabelSettings" uid="uid://l6vxbsm2mq1d" path="res://rsc/title_label.tres" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bcqrll2w0fw24" path="res://scenes/level_button.tscn" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://b3prtmlf3yvu" path="res://classes/level_setting.gd" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dg8egxm1n8p0m" path="res://scenes/front_sprite.tscn" id="3_tbgi4"]
+
+[sub_resource type="Resource" id="Resource_tbgi4"]
+script = ExtResource("3_jyhfs")
+columns = 4
+metadata/_custom_type_script = "uid://b3prtmlf3yvu"
+
+[sub_resource type="Resource" id="Resource_tefeu"]
+script = ExtResource("3_jyhfs")
+rows = 3
+columns = 4
+metadata/_custom_type_script = "uid://b3prtmlf3yvu"
+
+[sub_resource type="Resource" id="Resource_o6xl0"]
+script = ExtResource("3_jyhfs")
+rows = 4
+columns = 4
+metadata/_custom_type_script = "uid://b3prtmlf3yvu"
+
+[sub_resource type="Resource" id="Resource_tipki"]
+script = ExtResource("3_jyhfs")
+rows = 4
+columns = 6
+metadata/_custom_type_script = "uid://b3prtmlf3yvu"
+
+[sub_resource type="Resource" id="Resource_85g3d"]
+script = ExtResource("3_jyhfs")
+rows = 5
+columns = 6
+metadata/_custom_type_script = "uid://b3prtmlf3yvu"
+
+[sub_resource type="Resource" id="Resource_choun"]
+script = ExtResource("3_jyhfs")
+rows = 6
+columns = 7
+metadata/_custom_type_script = "uid://b3prtmlf3yvu"
+
+[node name="Main" type="Control" unique_id=943712725]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=410894967]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2938346, 0.33053938, 0.8057349, 0.34901962)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=797862264]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -394.0
+offset_top = -132.0
+offset_right = 394.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 128
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=102121273]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Memory Madneess"
+label_settings = ExtResource("1_sugp2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBLevels" type="HBoxContainer" parent="VBoxContainer" unique_id=1492802726]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+
+[node name="LevelButton" parent="VBoxContainer/HBLevels" unique_id=987799075 instance=ExtResource("2_jyhfs")]
+layout_mode = 2
+level_setting = SubResource("Resource_tbgi4")
+
+[node name="LevelButton2" parent="VBoxContainer/HBLevels" unique_id=1219678830 instance=ExtResource("2_jyhfs")]
+layout_mode = 2
+level_setting = SubResource("Resource_tefeu")
+
+[node name="LevelButton3" parent="VBoxContainer/HBLevels" unique_id=772194022 instance=ExtResource("2_jyhfs")]
+layout_mode = 2
+level_setting = SubResource("Resource_o6xl0")
+
+[node name="LevelButton4" parent="VBoxContainer/HBLevels" unique_id=379512649 instance=ExtResource("2_jyhfs")]
+layout_mode = 2
+level_setting = SubResource("Resource_tipki")
+
+[node name="LevelButton5" parent="VBoxContainer/HBLevels" unique_id=865422228 instance=ExtResource("2_jyhfs")]
+layout_mode = 2
+level_setting = SubResource("Resource_85g3d")
+
+[node name="LevelButton6" parent="VBoxContainer/HBLevels" unique_id=672549613 instance=ExtResource("2_jyhfs")]
+layout_mode = 2
+level_setting = SubResource("Resource_choun")
+
+[node name="HBFrontSprites" type="HBoxContainer" parent="VBoxContainer" unique_id=1373094405]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 48
+
+[node name="FrontSprite" parent="VBoxContainer/HBFrontSprites" unique_id=1146491796 instance=ExtResource("3_tbgi4")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="FrontSprite2" parent="VBoxContainer/HBFrontSprites" unique_id=831888137 instance=ExtResource("3_tbgi4")]
+layout_mode = 2
+
+[node name="FrontSprite3" parent="VBoxContainer/HBFrontSprites" unique_id=1886859912 instance=ExtResource("3_tbgi4")]
+layout_mode = 2
+
+[node name="FrontSprite4" parent="VBoxContainer/HBFrontSprites" unique_id=1546526767 instance=ExtResource("3_tbgi4")]
+layout_mode = 2
+
+[node name="FrontSprite5" parent="VBoxContainer/HBFrontSprites" unique_id=996279768 instance=ExtResource("3_tbgi4")]
+layout_mode = 2

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://wxidmffuhjyh"]
+
+[ext_resource type="Texture2D" uid="uid://uxopsjhnkjuk" path="res://assets/frames/hidden_frame_blank.png" id="1_oe877"]
+[ext_resource type="Script" uid="uid://bymsxfqac3tn3" path="res://scripts/memory_button.gd" id="2_la50y"]
+[ext_resource type="Texture2D" uid="uid://gi84o5w5wm0m" path="res://assets/frames/red_frame.png" id="3_a2hk5"]
+[ext_resource type="Texture2D" uid="uid://dy1y0a5w37sx7" path="res://assets/glitch/banana.png" id="3_cr3wq"]
+
+[node name="MemoryButton" type="TextureButton" unique_id=1844913050]
+process_mode = 1
+offset_right = 84.0
+offset_bottom = 84.0
+rotation = 6.2831855
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_oe877")
+script = ExtResource("2_la50y")
+
+[node name="FrameRect" type="TextureRect" parent="." unique_id=1640604911]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_a2hk5")
+
+[node name="ImageRect" type="TextureRect" parent="." unique_id=806630744]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_cr3wq")
+
+[node name="ShowTimer" type="Timer" parent="." unique_id=151936740]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="timeout" from="ShowTimer" to="." method="_on_show_timer_timeout"]

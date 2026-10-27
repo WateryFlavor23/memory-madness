@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dg8egxm1n8p0m"]
+
+[ext_resource type="Texture2D" uid="uid://u0n5gka46fvk" path="res://assets/glitch/bag_moving_box.png" id="1_kik5l"]
+[ext_resource type="Script" uid="uid://byq7dwqvhot0" path="res://scripts/front_sprite.gd" id="2_oj3ib"]
+
+[node name="FrontSprite" type="TextureRect" unique_id=1146491796]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+offset_transform_enabled = true
+texture = ExtResource("1_kik5l")
+script = ExtResource("2_oj3ib")
